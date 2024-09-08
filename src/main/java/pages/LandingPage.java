@@ -16,9 +16,10 @@ public class LandingPage {
     //Methods for interactions
     public void fillUserName(){driver.findElement(UserNameField).sendKeys("standard_user");}
     public void fillpassword(){driver.findElement(PasswordField).sendKeys("secret_sauce");}
-    public void clickLogin(){driver.findElement(LoginBtn).click();}
+    public HomePage clickLogin(){
+        driver.findElement(LoginBtn).click();
+        return new HomePage(driver); }
+    }
 
 
-
-}
 
