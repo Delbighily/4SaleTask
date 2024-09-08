@@ -13,5 +13,6 @@ public class SortTest extends BaseTest {
         landingPage.fillpassword();
         landingPage.clickLogin();
         homePage.sortLowToHigh();
+        homePage.buyLowestPriceItem();
     }
 }
