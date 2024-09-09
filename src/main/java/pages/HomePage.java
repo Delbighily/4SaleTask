@@ -14,7 +14,7 @@ public class HomePage {
 
     //Element Locators
     private By FilterDropDown= By.className("product_sort_container");
-    private By FirstItem=By.className("btn_primary");
+    private By Items =By.className("btn_primary");
     private By CartIcon=By.className("shopping_cart_link");
 
 
@@ -23,10 +23,15 @@ public class HomePage {
     Select objSelect =new Select(driver.findElement(FilterDropDown));
     objSelect.selectByVisibleText("Price (low to high)");
     }
-    public CartPage buyLowestPriceItem(){
-        List<WebElement> products = driver.findElements(FirstItem);
+
+    public void buyLowestPriceItem(){
+        List<WebElement> products = driver.findElements(Items);
         WebElement element = products.get(0);
         element.click();
+        driver.findElement(CartIcon).click();
+    }
+
+    public CartPage clickCartIcon(){
         driver.findElement(CartIcon).click();
         return new CartPage(driver);
     }
