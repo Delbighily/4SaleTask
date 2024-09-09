@@ -8,7 +8,7 @@ public class CartPage {
     public CartPage(WebDriver driver){this.driver=driver;}
 
     //Element Locators
-    private By CheckoutButton= By.id("shopping_cart_link");
+    private By CheckoutButton= By.id("checkout");
 
     //Methods for interactions
     public InformationPage ProceedCheckout(){
