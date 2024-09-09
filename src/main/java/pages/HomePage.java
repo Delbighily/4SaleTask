@@ -9,22 +9,25 @@ import java.util.List;
 
 public class HomePage {
     private WebDriver driver;
+    public HomePage(WebDriver driver) {this.driver=driver;}
+
 
     //Element Locators
     private By FilterDropDown= By.className("product_sort_container");
     private By FirstItem=By.className("btn_primary");
-    public HomePage(WebDriver driver) {this.driver=driver;}
+    private By CartIcon=By.className("shopping_cart_link");
 
 
     //Methods for interactions
     public void sortLowToHigh(){
-    Select objSelect =new Select(driver.findElement(By.className("product_sort_container")));
+    Select objSelect =new Select(driver.findElement(FilterDropDown));
     objSelect.selectByVisibleText("Price (low to high)");
     }
-    public void buyLowestPriceItem(){
-        List<WebElement> products = driver.findElements(By.className("btn_primary"));
+    public CartPage buyLowestPriceItem(){
+        List<WebElement> products = driver.findElements(FirstItem);
         WebElement element = products.get(0);
         element.click();
-
+        driver.findElement(CartIcon).click();
+        return new CartPage(driver);
     }
 }
