@@ -25,8 +25,9 @@ public class InformationPage {
     public void fillPostalCode(){
         driver.findElement(PostalCodeField).sendKeys("123456");
     }
-    public void PressContinue(){
+    public CompleteCheckoutPage PressContinue(){
         driver.findElement(ContinueButton).click();
+        return new CompleteCheckoutPage(driver);
     }
 
 }
