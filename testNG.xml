@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="e-commerce site">
+    <test name="general order" preserve-order="true">
+        <classes>
+            <class name="login.LoginTest"></class>
+            <class name="sort.SortTest"></class>
+            <class name="proceedToCheckout.ProceedToCheckoutTest"></class>
+            <class name="fillInformations.FillingInfoTest"></class>
+            <class name="completingCheckoutTest.CompleteCheckoutTest"></class>
+        </classes>
+    </test>
+</suite>
