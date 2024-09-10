@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,18 +20,18 @@ public class HomePage {
 
 
     //Methods for interactions
+    @Step
     public void sortLowToHigh(){
     Select objSelect =new Select(driver.findElement(FilterDropDown));
     objSelect.selectByVisibleText("Price (low to high)");
     }
-
+    @Step
     public void buyLowestPriceItem(){
         List<WebElement> products = driver.findElements(Items);
         WebElement element = products.get(0);
         element.click();
-        driver.findElement(CartIcon).click();
     }
-
+    @Step
     public CartPage clickCartIcon(){
         driver.findElement(CartIcon).click();
         return new CartPage(driver);

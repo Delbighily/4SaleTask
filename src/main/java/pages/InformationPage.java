@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.ConfigUtils;
@@ -18,15 +19,19 @@ public class InformationPage {
 
 
     //Methods for interactions
+    @Step
     public void fillFirstName(){
         driver.findElement(FirstNameField).sendKeys(configUtils.getFname());
     }
+    @Step
     public void fillLastName(){
         driver.findElement(LastNameField).sendKeys(configUtils.getLname());
     }
+    @Step
     public void fillPostalCode(){
         driver.findElement(PostalCodeField).sendKeys(configUtils.getPostalCode());
     }
+    @Step
     public CompleteCheckoutPage PressContinue(){
         driver.findElement(ContinueButton).click();
         return new CompleteCheckoutPage(driver);
