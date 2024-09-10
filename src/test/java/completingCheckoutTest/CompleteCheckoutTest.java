@@ -1,6 +1,8 @@
-package completingPurchaseTest;
+package completingCheckoutTest;
 
 import base.BaseTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CartPage;
@@ -8,8 +10,11 @@ import pages.CompleteCheckoutPage;
 import pages.HomePage;
 import pages.InformationPage;
 
-public class CompletePurchaseTest extends BaseTest {
-    @Test
+
+@Feature("Complete checkout scenario")
+public class CompleteCheckoutTest extends BaseTest {
+    @Description("in this test the user completes the purchase process to the final step and get the confirmation message")
+    @Test (description = "Test completing  checkout process")
     public void testFillingData(){
         HomePage homePage= landingPage.clickLogin();
         landingPage.fillUserName();
