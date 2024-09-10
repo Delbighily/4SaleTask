@@ -2,10 +2,12 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utils.ConfigUtils;
 
 public class LandingPage {
     private WebDriver driver;
     public LandingPage(WebDriver driver){this.driver=driver;}
+    ConfigUtils configUtils=new ConfigUtils();
 
 
     //Element Locators
@@ -14,8 +16,8 @@ public class LandingPage {
     private By LoginBtn= By.id("login-button");
 
     //Methods for interactions
-    public void fillUserName(){driver.findElement(UserNameField).sendKeys("standard_user");}
-    public void fillpassword(){driver.findElement(PasswordField).sendKeys("secret_sauce");}
+    public void fillUserName(){driver.findElement(UserNameField).sendKeys(configUtils.getUserName());}
+    public void fillpassword(){driver.findElement(PasswordField).sendKeys(configUtils.getPassword());}
     public HomePage clickLogin(){
         driver.findElement(LoginBtn).click();
         return new HomePage(driver); }
