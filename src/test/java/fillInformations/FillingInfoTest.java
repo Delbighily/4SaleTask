@@ -1,13 +1,18 @@
 package fillInformations;
 
 import base.BaseTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.HomePage;
 import pages.InformationPage;
 
+
+@Feature("Filling information feature")
 public class FillingInfoTest extends BaseTest {
-    @Test
+    @Description("in this test the user fills the required data to complete the purchase process")
+    @Test (description = "Test adding required data in information screen")
     public void testFillingData(){
         HomePage homePage= landingPage.clickLogin();
         landingPage.fillUserName();
