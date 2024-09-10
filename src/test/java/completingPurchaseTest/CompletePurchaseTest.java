@@ -1,6 +1,7 @@
 package completingPurchaseTest;
 
 import base.BaseTest;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.CompleteCheckoutPage;
@@ -24,4 +25,7 @@ public class CompletePurchaseTest extends BaseTest {
         CompleteCheckoutPage completePurchaseTest= informationPage.PressContinue();
         completePurchaseTest.pressOnFinishButton();
 
+
+        //ASSERTIONS
+        Assert.assertTrue(completePurchaseTest.SuccessMessageVisible());
 }}
