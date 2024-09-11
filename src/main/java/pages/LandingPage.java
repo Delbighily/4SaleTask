@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.ConfigUtils;
 
-public class LandingPage {
+public  class LandingPage {
     private WebDriver driver;
     public LandingPage(WebDriver driver){this.driver=driver;}
     ConfigUtils configUtils=new ConfigUtils();

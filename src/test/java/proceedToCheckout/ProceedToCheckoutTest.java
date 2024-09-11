@@ -14,10 +14,9 @@ public class ProceedToCheckoutTest extends BaseTest {
     @Description("in this test the user proceeds to his next step in the purchasing process when he goes to checkout")
 
     public void testProceedToCheckout(){
-        HomePage homePage= landingPage.clickLogin();
         landingPage.fillUserName();
         landingPage.fillpassword();
-        landingPage.clickLogin();
+        HomePage homePage= landingPage.clickLogin();
         homePage.sortLowToHigh();
         homePage.buyLowestPriceItem();
         CartPage cartPage =homePage.clickCartIcon();
