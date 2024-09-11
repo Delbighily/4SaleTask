@@ -16,10 +16,9 @@ public class CompleteCheckoutTest extends BaseTest {
     @Description("in this test the user completes the purchase process to the final step and get the confirmation message")
     @Test (description = "Test completing  checkout process")
     public void testFillingData(){
-        HomePage homePage= landingPage.clickLogin();
         landingPage.fillUserName();
         landingPage.fillpassword();
-        landingPage.clickLogin();
+        HomePage homePage= landingPage.clickLogin();
         homePage.sortLowToHigh();
         homePage.buyLowestPriceItem();
         CartPage cartPage =homePage.clickCartIcon();
