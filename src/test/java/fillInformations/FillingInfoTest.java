@@ -14,10 +14,9 @@ public class FillingInfoTest extends BaseTest {
     @Description("in this test the user fills the required data to complete the purchase process")
     @Test (description = "Test adding required data in information screen")
     public void testFillingData(){
-        HomePage homePage= landingPage.clickLogin();
         landingPage.fillUserName();
         landingPage.fillpassword();
-        landingPage.clickLogin();
+        HomePage homePage= landingPage.clickLogin();
         homePage.sortLowToHigh();
         homePage.buyLowestPriceItem();
         CartPage cartPage =homePage.clickCartIcon();
